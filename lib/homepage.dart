@@ -11,48 +11,43 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
         centerTitle: true,
+        backgroundColor: Colors.black,
         title: Text(
-          "App",
+          "Black",
           style: TextStyle(
-            fontSize: 30,
-            color: Colors.red
-          ),
-        )
+            fontSize: 70,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            color: Colors.white
 
+          ),
+        ),
       ),
 body: Container(
   alignment: Alignment.center,
+
+  margin: EdgeInsets.all(10),
   height: MediaQuery.of(context).size.height,
   width: MediaQuery.of(context).size.width,
-  color: Colors.black,
-  padding: EdgeInsets.all(20),
-  child: Container(
-    margin: EdgeInsets.all(10),
-    alignment: Alignment.center,
-    height: MediaQuery.of(context).size.height,
-    width: MediaQuery.of(context).size.width,
-    color: Colors.cyan,
-    child: Container(
-      padding: EdgeInsets.all(10),
-      alignment: Alignment.center,
-      height: 150,
-      width: 150,
-      color: Colors.red,
+  color: Colors.white,
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.20,
+        width: 150,
+        color: Colors.black,
+        //alignment: Alignment.center,
+        child: Center(
+          child: Text(
+            "black",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 50
 
-      child: Text(
-
-        " hei",
-        style:TextStyle(
-          fontSize:80,
-          color: Colors.green,
-
-        ) ,
-      ),
-    ),
+            ),
+          ),
+        ),
+  )
   ),
-),
-    );
+);
   }
 }
