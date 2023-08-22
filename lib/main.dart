@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/work.dart';
 
 import 'homepage.dart';
 void main(){
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightBlue
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHome()
+      home: const NewHome()
     );
   }
 }
