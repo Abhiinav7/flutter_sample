@@ -29,31 +29,33 @@ class _MyHomeState extends State<MyHome> {
         child: Container(
           height: MediaQuery.of(context).size.height * 0.80,
           width: MediaQuery.of(context).size.width * 0.80,
-          margin: const EdgeInsets.only(bottom: 20,left: 20,right: 20,top: 20),
+          margin:
+              const EdgeInsets.only(bottom: 20, left: 20, right: 20, top: 20),
           decoration: const BoxDecoration(
               color: Colors.green,
-              borderRadius:
-                  BorderRadius.only(bottomRight: Radius.circular(30),bottomLeft: Radius.circular(30))),
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(30),
+                  bottomLeft: Radius.circular(30))),
           child: Center(
             child: Container(
-              width: 300,
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                border: Border.all(width: 10, color: Colors.white),
-                borderRadius: const BorderRadius.all(Radius.circular(150)),
-                boxShadow: const [BoxShadow(blurRadius: 10, spreadRadius: 10)],
-              ),
-              child: Icon(Icons.holiday_village)
-            ),
+                width: 300,
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  border: Border.all(width: 10, color: Colors.white),
+                  borderRadius: const BorderRadius.all(Radius.circular(150)),
+                  boxShadow: const [
+                    BoxShadow(blurRadius: 10, spreadRadius: 10)
+                  ],
+                ),
+                child: Icon(Icons.holiday_village)),
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: (){},
+        onPressed: () {},
         tooltip: "button",
-
       ),
     );
   }
