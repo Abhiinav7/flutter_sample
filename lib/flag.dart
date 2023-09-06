@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/rowcoltext.dart';
 
-class Flag extends StatelessWidget {
+class Flag extends StatefulWidget {
+
   const Flag({super.key});
 
   @override
+  State<Flag> createState() => _FlagState();
+}
+
+class _FlagState extends State<Flag> {
+  bool chk=false;
+
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -54,6 +64,15 @@ class Flag extends StatelessWidget {
                   size: 49,
                   color: Colors.pinkAccent,
                 )),
+            Checkbox(
+              value: chk,
+              onChanged: (bool? value) {
+               setState(() {
+                 chk=value!;
+               });
+              },
+
+            )
           ],
         ),
       ),

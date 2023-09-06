@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/rowcoltext.dart';
 import 'package:flutter_sample/work.dart';
+import 'package:flutter_sample/work2.dart';
 
+import 'button.dart';
 import 'flag.dart';
+import 'homepage.dart';
 import 'new.dart';
 
 void main(){
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightBlue
       ),
       debugShowCheckedModeBanner: false,
-      home: const Flag()
+      home: const Buttons()
     );
   }
 }

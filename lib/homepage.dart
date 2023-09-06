@@ -44,8 +44,8 @@ class _MyHomeState extends State<MyHome> {
                   color: Colors.red,
                   border: Border.all(width: 10, color: Colors.white),
                   borderRadius: const BorderRadius.all(Radius.circular(150)),
-                  boxShadow: const [
-                    BoxShadow(blurRadius: 10, spreadRadius: 10)
+                  boxShadow:  [
+                    BoxShadow(blurRadius: 10, spreadRadius: 10,offset: Offset(10, 10)),
                   ],
                 ),
                 child: Icon(Icons.holiday_village)),
