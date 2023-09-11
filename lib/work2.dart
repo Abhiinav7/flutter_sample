@@ -13,11 +13,38 @@ class _MixedState extends State<Mixed> {
       appBar: AppBar(
       ),
       body: Container(
-        child: Row(
+        child: Column(
+
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.indigo,
+                      shape: BoxShape.circle
+                  ),
+                ),
 
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.limeAccent,
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.cyan,
+                      shape: BoxShape.circle
+                  ),
+                )
+              ],
+            ),
 
             Container(
               width: 100,
@@ -35,33 +62,13 @@ class _MixedState extends State<Mixed> {
               ),
               child: IconButton(onPressed: () {  }, icon: Icon(Icons.access_time_filled_sharp),),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                 decoration: BoxDecoration(
-                   color: Colors.indigo,
-                   shape: BoxShape.circle
-                 ),
-                ),
-
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.limeAccent,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.cyan,
-                    shape: BoxShape.circle
-                  ),
-                )
-              ],
-            )
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                  color: Colors.pink,
+                  shape: BoxShape.circle),
+            ),
 
           ],
         ),
