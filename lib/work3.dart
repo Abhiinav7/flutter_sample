@@ -60,7 +60,9 @@ leading:IconButton(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CircleAvatar(
-                    backgroundImage: NetworkImage("https://spng.pngfind.com/pngs/s/173-1737582_1000-x-972-71-4-business-man-with.png"),
+                    backgroundImage: AssetImage("assets/images/bahiz.png"),
+                    radius: 34,
+                    //NetworkImage("https://spng.pngfind.com/pngs/s/173-1737582_1000-x-972-71-4-business-man-with.png"),
                     // child: Image.network(
                     //     "https://spng.pngfind.com/pngs/s/173-1737582_1000-x-972-71-4-business-man-with.png"),
                   ),
@@ -68,7 +70,7 @@ leading:IconButton(
                     "Bahiz",
                     style: TextStyle(
                         color: Colors.teal,
-                        fontSize: 50,
+                        fontSize: 30,
                         fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
@@ -76,7 +78,7 @@ leading:IconButton(
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.mark_unread_chat_alt,
                       color: Colors.teal,
                       size: 40,
@@ -85,7 +87,7 @@ leading:IconButton(
                   IconButton(
                     color: Colors.teal,
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.call,
                       size: 40,
                     ),
@@ -98,7 +100,7 @@ leading:IconButton(
                       });
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Container(
@@ -120,7 +122,7 @@ leading:IconButton(
               ),
             ),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.deepPurpleAccent, width: 5),
                   color: Colors.white70,
@@ -131,36 +133,40 @@ leading:IconButton(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
 
-                  CircleAvatar(
-                    backgroundImage: NetworkImage("https://clipart-library.com/image_gallery2/Happy-Person-Free-Download-PNG.png"),
+                  const CircleAvatar(
+
+
+                    backgroundImage: AssetImage("assets/images/fazil.png"),
+                    radius: 32,
+                    //NetworkImage("https://clipart-library.com/image_gallery2/Happy-Person-Free-Download-PNG.png"),
                     // child: Image.network(
                     //     "https://spng.pngfind.com/pngs/s/173-1737582_1000-x-972-71-4-business-man-with.png"),
                   ),
-                  Text(
+                  const Text(
                     "Fazil",
                     style: TextStyle(
                         color: Colors.teal,
-                        fontSize: 50,
+                        fontSize: 40,
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 16,
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.mark_unread_chat_alt,
                       color: Colors.teal,
                       size: 40,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   IconButton(
                     color: Colors.teal,
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.call,
                       size: 40,
                     ),
@@ -173,7 +179,7 @@ leading:IconButton(
                       });
                     },
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(
