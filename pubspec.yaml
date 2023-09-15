@@ -54,6 +54,9 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
+    - assets/demonslayer/
+    - assets/hashira/
+    - assets/uppermoon/
 
 
   # The following line ensures that the Material Icons font is

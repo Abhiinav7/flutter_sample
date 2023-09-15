@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/uppermoon.dart';
 import 'package:flutter_sample/work3.dart';
 
+import 'RadioButton.dart';
+import 'demonslayer.dart';
+import 'button.dart';
 import 'card.dart';
 import 'container.dart';
+import 'counterApp.dart';
+import 'hashiras.dart';
 import 'image.dart';
 import 'checkbox.dart';
 
@@ -17,10 +23,10 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       title: "demo app",
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue
+        primarySwatch: Colors.teal
       ),
       debugShowCheckedModeBanner: false,
-      home:  const StudiedWidgets()
+      home:  const DemonSlayer()
     );
   }
 }

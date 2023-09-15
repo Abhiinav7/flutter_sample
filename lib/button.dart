@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import 'RadioButton.dart';
+
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
 
@@ -63,8 +65,14 @@ class Buttons extends StatelessWidget {
                     minimumSize: MaterialStateProperty.all(Size(70, 40)),
                     textStyle:
                         MaterialStatePropertyAll(TextStyle(fontSize: 70))),
-                onPressed: () {
-                  print("iam aaruu");
+    // onPressed: () {
+    // Navigator.push(
+    // context,
+    // MaterialPageRoute(builder: (context) => const SecondRoute()),
+    // );
+    // }
+                onPressed: () { 
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => RadioButton()));
                 },
                 child: Text("Aaru")),
             OutlinedButton(
