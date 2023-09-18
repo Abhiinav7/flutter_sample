@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'feedPage.dart';
 
 class Test extends StatefulWidget {
   const Test({super.key});
@@ -67,7 +68,7 @@ class _TestState extends State<Test> {
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
-                  print("Login failed");
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FeedPage()));
                 },
                 child: Text(
                   "Log in",
