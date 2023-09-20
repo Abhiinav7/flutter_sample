@@ -57,6 +57,7 @@ flutter:
     - assets/demonslayer/
     - assets/hashira/
     - assets/uppermoon/
+    - assets/person/
 
 
   # The following line ensures that the Material Icons font is

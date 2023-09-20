@@ -73,6 +73,16 @@ class _RadioButtonState extends State<RadioButton> {
                   })
             ],
           ),
+          Radio(
+
+              value: 4,
+              groupValue: radiobutton,
+              onChanged: (va){
+                setState(() {
+                  radiobutton=va!;
+                });
+              }
+          )
 
         ],
       ),
