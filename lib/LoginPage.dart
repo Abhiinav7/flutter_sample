@@ -1,14 +1,40 @@
 import 'package:flutter/material.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'feedPage.dart';
 
-class Test extends StatefulWidget {
-  const Test({super.key});
+
+class Instagram extends StatefulWidget {
+  const Instagram({super.key});
 
   @override
-  State<Test> createState() => _TestState();
+  State<Instagram> createState() => _InstagramState();
 }
 
-class _TestState extends State<Test> {
+class _InstagramState extends State<Instagram> {
+  List loginInfo = [];
+  bool login1 = false;
+  List l = [];
+
+  TextEditingController uname = TextEditingController();
+  TextEditingController pass = TextEditingController();
+
+  Future saveLogin(String n, String p) async {
+    SharedPreferences data = await SharedPreferences.getInstance();
+    await data.setString("Username1", n);
+    await data.setString("Password1", p);
+    return true;
+  }
+
+  Future getData() async {
+    SharedPreferences data = await SharedPreferences.getInstance();
+    String? uname = data.getString('Username1');
+    String? pass = data.getString('Password1');
+    loginInfo = [uname, pass];
+    return loginInfo;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +45,7 @@ class _TestState extends State<Test> {
                 bottomRight: Radius.circular(20))),
         title: Text("LoginPage"),
         centerTitle: true,
-        titleTextStyle: TextStyle(fontSize: 40,fontWeight: FontWeight.w600),
+        titleTextStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
       ),
       body: Padding(
         padding: EdgeInsets.all(25.0),
@@ -44,6 +70,7 @@ class _TestState extends State<Test> {
             TextField(
               keyboardType: TextInputType.name,
               maxLength: 100,
+              controller: uname,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.zero,
@@ -52,9 +79,10 @@ class _TestState extends State<Test> {
               ),
             ),
             TextField(
-              keyboardType: TextInputType.number,
-              obscureText: true,
+              keyboardType: TextInputType.name,
+              //obscureText: true,
               maxLength: 10,
+              controller: pass,
               decoration: InputDecoration(
                   border: OutlineInputBorder(borderRadius: BorderRadius.zero),
                   labelText: "Password"),
@@ -68,14 +96,60 @@ class _TestState extends State<Test> {
               alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => FeedPage()));
+                  saveLogin(uname.text, pass.text);
+                  setState(() {
+                    uname.text = " ";
+                    pass.text = " ";
+                    login1 = true;
+                  });
                 },
                 child: Text(
-                  "Log in",
+                  login1 ? "saved" : "save",
                   style: TextStyle(fontSize: 25, color: Colors.white),
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              children: [
+                FloatingActionButton(
+                  onPressed: () async {
+                    await getData();
+                    setState(() {
+                      uname.text = loginInfo[0];
+                      pass.text = loginInfo[1];
+                    });
+                  },
+                  child: Text("get"),
+                ),
+                SizedBox(
+                  width: 90,
+                ),
+                FloatingActionButton(
+                  onPressed: () async {
+                    l=await getData();
+                    setState(() {
+                      print(l[0]);
+                      print(l[1]);
+                    });
+                  },
+                  child: Text("print"),
+                ),
+                SizedBox(
+                  width: 60,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => FeedPage()));
+                    },
+                    child: Text("Next"))
+              ],
+            ),
+
+
           ],
         ),
       ),

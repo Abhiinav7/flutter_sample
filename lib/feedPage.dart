@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key});
 
@@ -8,10 +10,21 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: () async{
+          //Navigator.pop(context);
+
+
+        },
+          icon: Icon(Icons.close,
+            color: Colors.red,
+          ),
+        ),
         centerTitle: true,
         titleTextStyle: TextStyle(
             color: Colors.red, fontWeight: FontWeight.w700, fontSize: 35),
@@ -87,3 +100,4 @@ class _FeedPageState extends State<FeedPage> {
     );
   }
 }
+
