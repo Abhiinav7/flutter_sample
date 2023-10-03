@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/showName_Pass.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'feedPage.dart';
 
 
 class Instagram extends StatefulWidget {
@@ -15,7 +14,7 @@ class Instagram extends StatefulWidget {
 class _InstagramState extends State<Instagram> {
   List loginInfo = [];
   bool login1 = false;
-  List l = [];
+  List l = [" ", " "];
 
   TextEditingController uname = TextEditingController();
   TextEditingController pass = TextEditingController();
@@ -48,7 +47,7 @@ class _InstagramState extends State<Instagram> {
         titleTextStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
       ),
       body: Padding(
-        padding: EdgeInsets.all(25.0),
+        padding: EdgeInsets.all(15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -87,6 +86,21 @@ class _InstagramState extends State<Instagram> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.zero),
                   labelText: "Password"),
             ),
+            Row(
+              children: [
+                SizedBox(width: 240,),
+                GestureDetector(
+                  onTap: (){},
+                  child:Text("forgot password",
+                  style: TextStyle(
+                  color: Colors.grey.withOpacity(0.7),)
+
+
+                    ),
+                  ),
+              ],
+            ) ,
+SizedBox(height: 10,),
             Container(
               height: 59,
               width: double.infinity,
@@ -129,27 +143,27 @@ class _InstagramState extends State<Instagram> {
                 ),
                 FloatingActionButton(
                   onPressed: () async {
-                    l=await getData();
+                    l = await getData();
                     setState(() {
                       print(l[0]);
                       print(l[1]);
                     });
                   },
-                  child: Text("print"),
+                  child: Text("Show"),
                 ),
                 SizedBox(
                   width: 60,
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => FeedPage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ShowPage(logInfo: l)));
                     },
                     child: Text("Next"))
               ],
             ),
-
-
           ],
         ),
       ),

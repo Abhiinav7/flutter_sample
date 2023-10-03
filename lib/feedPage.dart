@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key});
+
+   FeedPage({super.key});
 
   @override
   State<FeedPage> createState() => _FeedPageState();
@@ -11,13 +12,12 @@ class FeedPage extends StatefulWidget {
 
 class _FeedPageState extends State<FeedPage> {
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: () async{
-          //Navigator.pop(context);
+          Navigator.pop(context);
 
 
         },
@@ -90,7 +90,8 @@ class _FeedPageState extends State<FeedPage> {
                       IconButton(
                           onPressed: () {}, icon: Icon(Icons.thumb_down)),
                     ],
-                  )
+                  ),
+
                 ],
               ),
             ),
