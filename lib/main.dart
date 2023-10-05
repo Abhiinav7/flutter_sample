@@ -15,6 +15,7 @@ import 'RadioButton.dart';
 import 'Sharedpref_Sir.dart';
 
 import 'TabBars.dart';
+import 'Whatsapp/whatsapp_home_screen.dart';
 import 'bottomNavigationBar.dart';
 import 'change_color.dart';
 import 'demonslayer.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal
       ),
       debugShowCheckedModeBanner: false,
-      home:  const LoginPage1()
+      home:  const WatsapHome()
     );
   }
 }

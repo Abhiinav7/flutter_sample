@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'Account_details.dart';
+
 class Create_Account extends StatefulWidget {
   const Create_Account({super.key});
 
@@ -10,21 +12,40 @@ class Create_Account extends StatefulWidget {
 }
 
 class _Create_AccountState extends State<Create_Account> {
-
-  Future <bool> saveFn(String tname,String tpass,String tphone,String tmail )async{
-SharedPreferences data=await SharedPreferences.getInstance();
-await data.setString("Name", tname);
-await data.setString("Pass",tpass);
-await data.setString("Phone", tphone);
-await data.setString("Email", tmail);
-return true;
-
+  Future<bool> saveFn(
+      String tname, String tpass, String tphone, String tmail) async {
+    SharedPreferences data = await SharedPreferences.getInstance();
+    try {
+      await data.setString("Name", tname);
+      await data.setString("Pass", tpass);
+      await data.setString("Phone", tphone);
+      await data.setString("Email", tmail);
+      return true;
+    } catch (e) {
+      print("error in saving data=$e");
+      return false;
+    }
   }
+Future <List?> getFn()async{
+    SharedPreferences data=await SharedPreferences.getInstance();
+    String? nam=await data.getString("Name");
+    String? pas=await data.getString("Pass");
+    String? pho=await data.getString("Phone");
+    String? ema=await data.getString("Email");
 
-  TextEditingController tname=TextEditingController();
-      TextEditingController tpass=TextEditingController();
-  TextEditingController tphone=TextEditingController();
-      TextEditingController tmail=TextEditingController();
+   Ldata=[nam,pas,pho,ema];
+   return Ldata;
+
+
+}
+  TextEditingController tname = TextEditingController();
+  TextEditingController tpass = TextEditingController();
+  TextEditingController tphone = TextEditingController();
+  TextEditingController tmail = TextEditingController();
+
+  bool a = false;
+  List<dynamic> Ldata=[];
+  List Lget=[];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +78,6 @@ return true;
                   keyboardType: TextInputType.text,
                   maxLength: 15,
                   decoration: InputDecoration(
-
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(26),
                           borderSide: BorderSide(
@@ -71,16 +91,15 @@ return true;
                   height: 12,
                 ),
                 TextField(
-controller: tpass,
+                  controller: tpass,
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
                   decoration: InputDecoration(
-
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 4,color: Colors.blue),
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                      label: Text("password"), hintText: "enter name"),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(width: 4, color: Colors.blue),
+                          borderRadius: BorderRadius.circular(20)),
+                      label: Text("password"),
+                      hintText: "enter name"),
                 ),
                 SizedBox(
                   height: 12,
@@ -89,12 +108,14 @@ controller: tpass,
                   controller: tphone,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-
-                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),
-                    borderSide: BorderSide(color: Colors.blue,
-                    width: 4,
-                    style: BorderStyle.solid)),
-                      label: Text("phone"), hintText: "enter phone number"),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 4,
+                              style: BorderStyle.solid)),
+                      label: Text("phone"),
+                      hintText: "enter phone number"),
                 ),
                 SizedBox(
                   height: 12,
@@ -103,20 +124,38 @@ controller: tpass,
                   controller: tmail,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-
-                      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.blue,
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(
+                              color: Colors.blue,
                               width: 4,
                               style: BorderStyle.solid)),
-                      label: Text("Email"), hintText: "enter email "),
+                      label: Text("Email"),
+                      hintText: "enter email "),
                 ),
                 SizedBox(
                   height: 12,
                 ),
-
                 ElevatedButton(
-                    onPressed: () {},
-                    child: Text("SignUp"))
+                    onLongPress: () {
+                      getFn();
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> AccounDetails(AccDet: Ldata)));
+                      setState(() {
+                        tname.text=Ldata[0];
+                      });
+
+                    },
+                    onPressed: () async {
+                      a = await saveFn(
+                          tname.text, tpass.text, tphone.text, tmail.text);
+                      setState(() {
+                        tname.clear();
+                        tpass.clear();
+                        tphone.clear();
+                        tmail.clear();
+                      });
+                    },
+                    child: Text(a ? "Login" : "SignUp"))
               ],
             ),
           ),
