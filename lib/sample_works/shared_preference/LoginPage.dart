@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/showName_Pass.dart';
+import 'package:flutter_sample/sample_works/shared_preference/showName_Pass.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 

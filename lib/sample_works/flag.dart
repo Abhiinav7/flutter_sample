@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/rowcoltext.dart';
+import 'package:flutter_sample/widgets_Learning/rowcoltext.dart';
 
 class Flag extends StatefulWidget {
 

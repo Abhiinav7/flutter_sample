@@ -73,19 +73,22 @@ Future <List?> getFn()async{
                 SizedBox(
                   height: 18,
                 ),
-                TextField(
-                  controller: tname,
-                  keyboardType: TextInputType.text,
-                  maxLength: 15,
-                  decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(26),
-                          borderSide: BorderSide(
-                              color: Colors.blueAccent,
-                              width: 4,
-                              style: BorderStyle.solid)),
-                      label: Text("Name"),
-                      hintText: "enter name"),
+                Container(
+                  //border:inputborder:none
+                  child: TextField(
+                    controller: tname,
+                    keyboardType: TextInputType.text,
+                    maxLength: 15,
+                    decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(26),
+                            borderSide: BorderSide(
+                                color: Colors.blueAccent,
+                                width: 4,
+                                style: BorderStyle.solid)),
+                        label: Text("Name"),
+                        hintText: "enter name"),
+                  ),
                 ),
                 SizedBox(
                   height: 12,
