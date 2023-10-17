@@ -98,6 +98,8 @@ Future <List?> getFn()async{
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: true,
                   decoration: InputDecoration(
+                    border: OutlineInputBorder(borderSide: BorderSide(width: 4, color: Colors.blue),
+                        borderRadius: BorderRadius.circular(20)),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(width: 4, color: Colors.blue),
                           borderRadius: BorderRadius.circular(20)),

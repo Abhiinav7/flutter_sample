@@ -23,47 +23,66 @@ class _MyHttpSampleState extends State<MyHttpSample> {
   bool iphone1 = false;
   bool samsung1 = false;
   bool oppo1 = false;
-  bool huawai1= false;
+  bool huawai1 = false;
 
-Widget Iphone() {
-  if (iphone1 == true) {
-    return Container(
-      height: 300,
-      width: 250,
-    child: Image.asset("assets/images/iphonex.jpg",fit: BoxFit.fill,),
-    );
+  Widget Iphone() {
+    if (iphone1 == true) {
+      return Container(
+        height: 300,
+        width: 250,
+        child: Image.asset(
+          "assets/images/iphonex.jpg",
+          fit: BoxFit.fill,
+        ),
+      );
+    } else {
+      return SizedBox();
+    }
   }
-  else{return SizedBox();}
-}
+
   Widget Samsung() {
     if (samsung1 == true) {
       return Container(
         height: 300,
         width: 250,
-        child: Image.asset("assets/images/samsung.jpg",fit: BoxFit.fill,),
+        child: Image.asset(
+          "assets/images/samsung.jpg",
+          fit: BoxFit.fill,
+        ),
       );
+    } else {
+      return SizedBox();
     }
-    else{return SizedBox();}
   }
+
   Widget Oppo() {
     if (oppo1 == true) {
       return Container(
         height: 300,
         width: 180,
-        child: Image.asset("assets/images/oppo.jpg",fit: BoxFit.fill,),
+        child: Image.asset(
+          "assets/images/oppo.jpg",
+          fit: BoxFit.fill,
+        ),
       );
+    } else {
+      return SizedBox();
     }
-    else{return SizedBox();}
   }
+
   Widget Huwai() {
     if (huawai1 == true) {
       return Container(
         height: 300,
         width: 350,
-        child: Image.asset("assets/images/huwai.jpg",fit: BoxFit.fill,),
+        child: Image.asset(
+          "assets/images/huwai.jpg",
+          fit: BoxFit.fill,
+        ),
       );
+    } else {
+      return SizedBox();
     }
-    else{return SizedBox();}
   }
 
   Future downloadIphone() async {
@@ -164,13 +183,11 @@ Widget Iphone() {
                   onTap: () {
                     setState(() {
                       iphone = true;
-                      iphone1=true;
+                      iphone1 = true;
                     });
                   },
                   onLongPress: () {
-                   setState(() {
-
-                   });
+                    setState(() {});
                   },
                   leading: CircleAvatar(
                       radius: 35,
@@ -207,9 +224,7 @@ Widget Iphone() {
                     });
                   },
                   onLongPress: () {
-                    setState(() {
-
-                    });
+                    setState(() {});
                   },
                   leading: Container(
                     height: 75,
@@ -246,13 +261,11 @@ Widget Iphone() {
                   onTap: () {
                     setState(() {
                       oppo = true;
-                      oppo1=true;
+                      oppo1 = true;
                     });
                   },
                   onLongPress: () {
-                    setState(() {
-
-                    });
+                    setState(() {});
                   },
                   leading: Container(
                     height: 75,
@@ -287,13 +300,11 @@ Widget Iphone() {
                   onTap: () {
                     setState(() {
                       huawai = true;
-                      huawai1=true;
+                      huawai1 = true;
                     });
                   },
                   onLongPress: () {
-                    setState(() {
-
-                    });
+                    setState(() {});
                   },
                   leading: Container(
                     height: 75,
@@ -320,14 +331,13 @@ Widget Iphone() {
                 ),
               ),
             ),
-            SizedBox(height: 50,),
-
-
-           Iphone(),
+            SizedBox(
+              height: 50,
+            ),
+            Iphone(),
             Oppo(),
             Huwai(),
             Samsung(),
-
             downloading
                 ? Container(
                     height: 200,
@@ -336,27 +346,38 @@ Widget Iphone() {
                     child: gotData
                         ? Column(
                             children: [
-                              Text("Specifications",style: TextStyle(fontSize: 40,color: Colors.red,fontWeight: FontWeight.bold)),
-                              SizedBox(height: 5,),
+                              Text("Specifications",
+                                  style: TextStyle(
+                                      fontSize: 40,
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold)),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 " ${data['title']}",
-                                style: TextStyle(fontSize: 23,color: Colors.teal),
+                                style:
+                                    TextStyle(fontSize: 23, color: Colors.teal),
                               ),
                               Text(
                                 "id = ${data['id']}",
-                                style: TextStyle(fontSize: 23,color: Colors.teal),
+                                style:
+                                    TextStyle(fontSize: 23, color: Colors.teal),
                               ),
                               Text(
                                 "Category = ${data['category']}",
-                                style: TextStyle(fontSize: 23,color: Colors.teal),
+                                style:
+                                    TextStyle(fontSize: 23, color: Colors.teal),
                               ),
                               Text(
                                 "Price = ${data['price']}",
-                                style: TextStyle(fontSize: 23,color: Colors.teal),
+                                style:
+                                    TextStyle(fontSize: 23, color: Colors.teal),
                               ),
                               Text(
                                 "Brand = ${data['brand']}",
-                                style: TextStyle(fontSize: 20,color: Colors.teal),
+                                style:
+                                    TextStyle(fontSize: 20, color: Colors.teal),
                               ),
                             ],
                           )
@@ -374,8 +395,6 @@ Widget Iphone() {
                     // color: Colors.grey,
                     //child: Text("tap"),
                   ),
-
-
             Visibility(
                 visible: iphone,
                 child: ElevatedButton(
@@ -387,7 +406,6 @@ Widget Iphone() {
                       gotData = await downloadIphone();
                     },
                     child: Text("Product Details"))),
-
             Visibility(
                 visible: samsung,
                 child: ElevatedButton(
@@ -399,7 +417,6 @@ Widget Iphone() {
                       gotData = await downloadSamsung();
                     },
                     child: Text("Product Details"))),
-
             Visibility(
                 visible: huawai,
                 child: ElevatedButton(
@@ -411,7 +428,6 @@ Widget Iphone() {
                       gotData = await downloadHuawai();
                     },
                     child: Text("Product Details"))),
-
             Visibility(
                 visible: oppo,
                 child: ElevatedButton(

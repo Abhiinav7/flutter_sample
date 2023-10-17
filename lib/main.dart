@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/sample_works/shared_api.dart';
+import 'package:flutter_sample/sample_works/shared_preference/ChatScreen.dart';
+import 'package:flutter_sample/sample_works/shared_preference/ChatScreen2.dart';
+import 'package:flutter_sample/sample_works/shared_preference/LoginPage.dart';
+import 'package:flutter_sample/sample_works/work3.dart';
 import 'package:flutter_sample/shared_preference/shardedpreferencess.dart';
 import 'package:flutter_sample/shared_preference/sharedPref.dart';
 import 'package:flutter_sample/shared_preference/sharedPrerf_Athira.dart';
 import 'package:flutter_sample/shared_preference/sharedpreference.dart';
 import 'package:flutter_sample/sample_works/work.dart';
 import 'package:flutter_sample/sample_works/work2.dart';
+import 'package:flutter_sample/widgets_Learning/Grid.dart';
+import 'package:flutter_sample/widgets_Learning/Listview.dart';
+import 'package:flutter_sample/widgets_Learning/Snakbar_.dart';
 import 'package:flutter_sample/widgets_Learning/button.dart';
 import 'package:flutter_sample/widgets_Learning/card.dart';
 import 'package:flutter_sample/widgets_Learning/drawer.dart';
 import 'package:flutter_sample/widgets_Learning/rowcoltext.dart';
+import 'package:flutter_sample/widgets_Learning/wrap.dart';
 
 import 'Api learning/products/Main_Ui.dart';
 import 'widgets_Learning/TabBars.dart';
@@ -38,10 +47,12 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       title: "demo app",
       theme: ThemeData(
-        primarySwatch: Colors.teal
+        brightness: Brightness.light,
+        primarySwatch: Colors.teal,
+        //primaryColor: Colors.purpleAccent
       ),
       debugShowCheckedModeBanner: false,
-      home:  const MyHttpSample()
+      home:  const SnackbarWidget()
     );
   }
 }

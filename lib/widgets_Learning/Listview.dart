@@ -19,28 +19,28 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
     "misuri",
     "rengoku"
   ];
-  List<String> contactPic = [
-    "assets/demonslayer/tanjiroo.jpg",
-    "assets/hashira/giyuu.jpg",
-    "assets/hashira/shinobu.jpg",
-    "assets/demonslayer/nezuko.jpg",
-    "assets/demonslayer/insoku.jpg",
-    "assets/demonslayer/muichiro.jpg",
-    "assets/demonslayer/zenitsu.jpg",
-    "assets/hashira/misuri.jpg",
-    "assets/hashira/rengoku.jpg",
-  ];
-  List<Icon> iconss = [
-    Icon(Icons.call),
-    Icon(Icons.camera_alt_outlined),
-    Icon(Icons.video_call_rounded),
-    Icon(Icons.call_made_outlined),
-    Icon(Icons.add_a_photo),
-    Icon(Icons.video_camera_back),
-    Icon(Icons.access_time),
-    Icon(Icons.accessibility_new),
-    Icon(Icons.add_alert_sharp)
-  ];
+  Map  Icon_pic={
+    "contactPic":[ "assets/demonslayer/tanjiroo.jpg",
+      "assets/hashira/giyuu.jpg",
+      "assets/hashira/shinobu.jpg",
+      "assets/demonslayer/nezuko.jpg",
+      "assets/demonslayer/insoku.jpg",
+      "assets/demonslayer/muichiro.jpg",
+      "assets/demonslayer/zenitsu.jpg",
+      "assets/hashira/misuri.jpg",
+      "assets/hashira/rengoku.jpg",],
+    "iconss":[
+      Icon(Icons.call),
+      Icon(Icons.camera_alt_outlined),
+      Icon(Icons.video_call_rounded),
+      Icon(Icons.call_made_outlined),
+      Icon(Icons.add_a_photo),
+      Icon(Icons.video_camera_back),
+      Icon(Icons.access_time),
+      Icon(Icons.accessibility_new),
+      Icon(Icons.add_alert_sharp)
+    ]
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
             return Card(
               child: ListTile(
                   title: Text("${contacts[index]}"),
-                  trailing: iconss[index],
+                  trailing: Icon_pic["iconss"][index],
                   onTap: () {
                     showDialog(
                         context: context,
@@ -76,7 +76,7 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
                             ));
                   },
                   leading: CircleAvatar(
-                    backgroundImage: AssetImage(contactPic[index]),
+                    backgroundImage: AssetImage(Icon_pic["contactPic"][index]),
                   )),
             );
           },

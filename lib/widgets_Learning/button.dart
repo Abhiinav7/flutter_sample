@@ -26,6 +26,9 @@ class Buttons extends StatelessWidget {
           children: [
             TextButton(
                 style: ButtonStyle(
+                    padding: MaterialStatePropertyAll(EdgeInsets.all(10)),
+                    overlayColor: MaterialStatePropertyAll(Colors.red),
+                    // backgroundColor: MaterialStatePropertyAll(Colors.purpleAccent),
                     foregroundColor: MaterialStateProperty.all(Colors.pink)),
                 onPressed: () {
                   print("hello my name is aarav"
@@ -57,22 +60,25 @@ class Buttons extends StatelessWidget {
                 label: const Text("haloo")),
             ElevatedButton(
                 style: ButtonStyle(
+                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20))),
                     padding: MaterialStatePropertyAll(EdgeInsets.all(12)),
-                    backgroundColor:
-                        MaterialStatePropertyAll(Colors.lightGreenAccent),
+                    // backgroundColor:
+                    //     MaterialStatePropertyAll(Colors.lightGreenAccent),
+                    backgroundColor: MaterialStatePropertyAll(Theme.of(context).primaryColor),
                     foregroundColor:
                         MaterialStatePropertyAll(Colors.deepPurple),
                     minimumSize: MaterialStateProperty.all(Size(70, 40)),
                     textStyle:
                         MaterialStatePropertyAll(TextStyle(fontSize: 70))),
-    // onPressed: () {
-    // Navigator.push(
-    // context,
-    // MaterialPageRoute(builder: (context) => const SecondRoute()),
-    // );
-    // }
-                onPressed: () { 
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => RadioButton()));
+                // onPressed: () {
+                // Navigator.push(
+                // context,
+                // MaterialPageRoute(builder: (context) => const SecondRoute()),
+                // );
+                // }
+                onPressed: () {
+                  //Navigator.push(context, MaterialPageRoute(builder: (context) => RadioButton()));
                 },
                 child: Text("Aaru")),
             OutlinedButton(
