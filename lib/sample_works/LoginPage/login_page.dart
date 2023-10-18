@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
 
-import 'feedPage.dart';
+import '../feedPage.dart';
 
-class MyWork extends StatefulWidget {
-  const MyWork({super.key});
+class LoginPage extends StatefulWidget {
+  var mail;
+  var pass;
+
+  LoginPage({super.key, required this.mail, required this.pass});
 
   @override
-  State<MyWork> createState() => _MyWorkState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _MyWorkState extends State<MyWork> {
-  bool match = false;
-  final email = "anu123";
-  final pass = "anumol";
+class _LoginPageState extends State<LoginPage> {
+  final n = "";
 
-  final email0 = "";
-  final pass0 = "";
-
-  TextEditingController mail = TextEditingController();
-  TextEditingController pas = TextEditingController();
+  TextEditingController mail1 = TextEditingController();
+  TextEditingController pas1 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gmail"),
+        automaticallyImplyLeading: false,
+        title: Text("OpenSpace"),
         centerTitle: true,
         titleTextStyle: TextStyle(
           fontSize: 38,
@@ -59,8 +58,8 @@ class _MyWorkState extends State<MyWork> {
                 height: 80,
               ),
               TextField(
-                  controller: mail,
-                  maxLength: 12,
+                  controller: mail1,
+                  maxLength: 100,
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.pinkAccent,
@@ -69,7 +68,7 @@ class _MyWorkState extends State<MyWork> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12)))),
               TextField(
-                  controller: pas,
+                  controller: pas1,
                   obscureText: true,
                   decoration: InputDecoration(
                       filled: true,
@@ -85,15 +84,9 @@ class _MyWorkState extends State<MyWork> {
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.pinkAccent)),
                   onPressed: () {
-                    final email1 = mail.text;
-                    final pass1 = pas.text;
-                    if (email == email1 && pass == pass1) {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => FeedPage()));
-                      setState(() {
-                        match = true;
-                      });
-                    } else if (email0 == email1 && pass0 == pass1) {
+                    final email=mail1.text;
+                    final pass=pas1.text;
+                    if(n==email && n==pass)  {
                       final snakbar = SnackBar(
                           backgroundColor: Colors.pinkAccent,
                           behavior: SnackBarBehavior.floating,
@@ -102,7 +95,16 @@ class _MyWorkState extends State<MyWork> {
                               label: "try again", onPressed: () {}),
                           content: Text("email & password is empty"));
                       ScaffoldMessenger.of(context).showSnackBar(snakbar);
-                    } else {
+                    }
+
+                    else if (widget.mail == email && widget.pass == pass) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FeedPage(),
+                          ));
+                    }
+                     else if (widget.mail != email && widget.pass != pass) {
                       final snakbar = SnackBar(
                           backgroundColor: Colors.pinkAccent,
                           behavior: SnackBarBehavior.floating,
@@ -112,6 +114,11 @@ class _MyWorkState extends State<MyWork> {
                           content: Text("incorrect email or password"));
                       ScaffoldMessenger.of(context).showSnackBar(snakbar);
                     }
+                     else{
+                       print("tata");
+                    }
+
+
                   },
                   child: Text("login")),
               GestureDetector(

@@ -1,35 +1,24 @@
 import 'package:flutter/material.dart';
 
-
-
 class FeedPage extends StatefulWidget {
-
-   FeedPage({super.key});
+  FeedPage({super.key});
 
   @override
   State<FeedPage> createState() => _FeedPageState();
 }
 
 class _FeedPageState extends State<FeedPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () async{
-          Navigator.pop(context);
+        automaticallyImplyLeading: false,
 
-
-        },
-          icon: Icon(Icons.close,
-            color: Colors.red,
-          ),
-        ),
         centerTitle: true,
         titleTextStyle: TextStyle(
             color: Colors.red, fontWeight: FontWeight.w700, fontSize: 35),
         backgroundColor: Colors.white54,
-        title: Text("Instagram"),
+        title: Text("OpenSpace"),
       ),
       body: ListView(
         children: [
@@ -91,7 +80,6 @@ class _FeedPageState extends State<FeedPage> {
                           onPressed: () {}, icon: Icon(Icons.thumb_down)),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -101,4 +89,3 @@ class _FeedPageState extends State<FeedPage> {
     );
   }
 }
-
