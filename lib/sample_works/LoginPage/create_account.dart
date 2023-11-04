@@ -15,6 +15,7 @@ class _CreateAccountState extends State<CreateAccount> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(21)),
               backgroundColor: Colors.pinkAccent,
               actions: [
                 TextButton(

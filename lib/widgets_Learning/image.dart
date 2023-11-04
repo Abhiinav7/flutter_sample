@@ -6,8 +6,8 @@ class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [Center(
+      body: ListView(children: [
+        Center(
           child: Column(
             children: [
               Image.asset(
@@ -24,8 +24,8 @@ class ProfileImage extends StatelessWidget {
                   height: 150,
                   width: 360,
                   color: Colors.blue,
-                  child:
-                      Image.asset("assets/images/tanjiro.jpg", fit: BoxFit.fill)),
+                  child: Image.asset("assets/images/tanjiro.jpg",
+                      fit: BoxFit.fill)),
               /*
               Image(
                 image: NetworkImage(
@@ -47,7 +47,7 @@ class ProfileImage extends StatelessWidget {
                   radius: 120,
                   child: CircleAvatar(
                     radius: 100,
-                   backgroundColor: Colors.red,
+                    backgroundColor: Colors.red,
                     backgroundImage: AssetImage("assets/images/tanjiro.jpg"),
                   ),
                 ),
@@ -60,20 +60,36 @@ class ProfileImage extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 100,
                     backgroundColor: Colors.blueAccent,
-                    child: Icon(Icons.verified_sharp,
+                    child: Icon(
+                      Icons.verified_sharp,
                       size: 80,
                     ),
-
                   ),
                 ),
+              ),
+              Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                    boxShadow: [
+                      BoxShadow(color: Colors.pink,
+                      blurRadius: 12,
+                        spreadRadius: 12
+                      ),
+
+                    ],
+                    color: Colors.red,
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                        image: NetworkImage(
+
+                            "https://m.media-amazon.com/images/M/MV5BYmUwNzIyYWUtOGEzNi00ZTQzLTg1NjEtY2ViYjAyNzAzNzg5XkEyXkFqcGdeQWthc2hpa2F4._V1_QL75_UY281_CR0,0,500,281_.jpg"))),
               )
-
-
             ],
           ),
         ),
-    ]
-      ),
+      ]),
     );
   }
 }

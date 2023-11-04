@@ -41,14 +41,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 color: Colors.red,
               ))
         ],
-        leadingWidth: 12,
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.home,
-              size: 40,
-              color: Colors.red,
-            )),
+
+
       ),
       drawer: Drawer(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
